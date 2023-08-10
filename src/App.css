@@ -2,37 +2,219 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: whitesmoke;
+  color: #252525;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-div {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  border: 1.1px solid cadetblue;
+  margin: 1rem 5rem;
+  gap: 1rem;
+  border-radius: 10px;
+  height: 2.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search-div input {
+  margin-left: 1rem;
+  padding: 0.7rem;
+  border-right: 1.1px solid crimson;
+  border-bottom: none;
+  border-top: none;
+  border-left: none;
+  border-radius: 10px;
+  outline: none;
+  background-color: whitesmoke;
+}
+
+.search-div input:focus {
+  outline: none;
+}
+
+.home {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 1rem 5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 17rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.card-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.card img {
+  max-width: 250px;
+  min-width: 250px;
+  min-height: 250px;
+  max-height: 250px;
+  margin: 11px;
+  border-radius: 5px;
+  object-fit: contain;
+}
+
+.card h4 {
+  margin: 10px 0px 10px 11px;
+}
+
+.card h5 {
+  margin: 5px 0px 5px 11px;
+}
+
+.card-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.img-div {
+  display: flex;
+  align-items: flex-start;
+}
+
+.icon {
+  background-color: whitesmoke;
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem;
+  margin-left: -4rem;
+  border-radius: 10px;
+}
+
+.link {
+  color: #252525;
+  text-decoration: none;
+}
+
+.single {
+  display: flex;
+  align-items: flex-start;
+  margin: 1rem 5rem;
+  flex-direction: column;
+}
+
+.single h2 {
+  margin-left: 1rem;
+}
+
+.single-child {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  width: -webkit-fill-available;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.single-child img {
+  width: 400px;
+  height: 450px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: left;
+  gap: 1rem;
+}
+
+.modal_outer_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(3px);
+  height: 100vh;
+  width: 100vw;
+  z-index: 1000;
+}
+
+.modal_outer_container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 37px;
+  border-radius: 12px;
+  overflow: auto;
+  max-width: 44rem;
+  width: 20rem;
+  max-height: 80vh;
+  background-color: whitesmoke;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.add-div {
+  display: flex;
+  align-items: baseline;
+  flex-direction: column;
+  text-align: left;
+  width: -webkit-fill-available;
+}
+
+.add-div input {
+  margin: 0.5rem 0rem;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  width: -webkit-fill-available;
+}
+
+.add-div input:focus {
+  outline-color: cadetblue;
+}
+
+.add-div h2 {
+  text-align: left;
+}
+
+.add {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: -webkit-fill-available;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label {
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+button {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  margin: 0.5rem 0rem;
+  background: cadetblue;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  font-size: initial;
+  font-weight: bold;
+  cursor: pointer;
 }
