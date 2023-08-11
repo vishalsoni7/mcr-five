@@ -7,7 +7,7 @@ import { SingleRecipe } from "./pages/SingleRecipes";
 function App() {
   return (
     <div className="App">
-      <Search />
+      {/* <Search /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/recipes/:recipeId" element={<SingleRecipe />} />

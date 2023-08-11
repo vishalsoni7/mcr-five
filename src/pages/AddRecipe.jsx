@@ -11,7 +11,7 @@ export const AddRecipe = ({ recipeId }) => {
     const { name, value } = e.target;
 
     if (name === "ingredients" || name === "instructions") {
-      setInput((prevInput) => ({ ...prevInput, [name]: value.split(" ") }));
+      setInput((prevInput) => ({ ...prevInput, [name]: value.split("\n") }));
     } else {
       setInput((prevInput) => ({
         id: `${Date.now()}`,
@@ -76,14 +76,14 @@ export const AddRecipe = ({ recipeId }) => {
           onChange={handleInput}
           defaultValue={recipeId ? findRecipe.cuisine : ""}
         />
-        <input
-          placeholder=" Ingredients"
+        <textarea
+          placeholder="Ingredients"
           type="text"
           name="ingredients"
           onChange={handleInput}
           defaultValue={recipeId ? findRecipe.ingredients : ""}
         />
-        <input
+        <textarea
           placeholder=" Instructions"
           type="text"
           name="instructions"

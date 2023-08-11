@@ -5,29 +5,68 @@ import { AddRecipe } from "./AddRecipe";
 import { FaTrashAlt, FaPen, FaPlus } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import { Search } from "./Search";
 
 export const Home = () => {
   const { data, setData, showModal, setShowModal, editId, setEditId } =
     useContext(RecipesContext);
+
+  const [radioValue, setRadioValue] = useState("");
+  const [searchedValue, setSearchedValue] = useState("");
 
   const delteRecipe = (id) => {
     const updateRecipe = data.filter((item) => item.id !== id);
     setData(updateRecipe);
   };
 
+  let updatedData = data;
+
+  if (searchedValue.trim() !== "") {
+    switch (radioValue) {
+      case "name":
+        updatedData = data.filter((recipe) =>
+          recipe.name.toLowerCase().includes(searchedValue.toLowerCase())
+        );
+        break;
+      case "ingredients":
+        updatedData = data.filter((recipe) =>
+          recipe.ingredients.some((ingredient) =>
+            ingredient.toLowerCase().includes(searchedValue.toLowerCase())
+          )
+        );
+        break;
+      case "cuisine":
+        updatedData = data.filter((recipe) =>
+          recipe.cuisine.toLowerCase().includes(searchedValue.toLowerCase())
+        );
+        break;
+      default:
+        break;
+    }
+  } else {
+    updatedData = data;
+  }
+
   return (
     <div className="home">
+      <Search
+        prop={{ setRadioValue, setSearchedValue, radioValue, searchedValue }}
+      />
       <h2> Add Recipes </h2>
 
       <div className="card-inner">
-        {data?.map(({ id, img, cuisine, name }) => (
+        {updatedData?.map(({ id, img, cuisine, name }) => (
           <div key={id} className="card">
             <div className="img-div">
               {" "}
               <img src={img} />
               <div className="icon">
-                <FaTrashAlt onClick={() => delteRecipe(id)} />
+                <FaTrashAlt
+                  className="icon-color"
+                  onClick={() => delteRecipe(id)}
+                />
                 <FaPen
+                  className="icon-color-a"
                   onClick={() => {
                     setEditId(id);
                     setShowModal(true);
@@ -45,7 +84,7 @@ export const Home = () => {
             </NavLink>
           </div>
         ))}
-        <FaPlus onClick={() => setShowModal(true)} />
+        <FaPlus className="icon-color-a" onClick={() => setShowModal(true)} />
       </div>
       {showModal && (
         <div

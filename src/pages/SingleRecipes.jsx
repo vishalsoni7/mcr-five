@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { RecipesContext } from "../component/RecipesContext";
 
 export const SingleRecipe = () => {
@@ -10,7 +10,12 @@ export const SingleRecipe = () => {
 
   return (
     <div className="single">
-      <h2> {findRecipe?.name} </h2>
+      <h2>
+        <NavLink className="link" to="/">
+          {" "}
+          {`⤺ ${findRecipe?.name}`}
+        </NavLink>
+      </h2>
 
       <div className="single-child">
         <div>
