@@ -74,7 +74,7 @@ body {
 }
 
 .card h5 {
-  margin: 5px 0px 5px 11px;
+  margin: 5px 11px 5px 11px;
 }
 
 .card-child {
@@ -102,6 +102,7 @@ body {
 .link {
   color: #252525;
   text-decoration: none;
+  width: 100%;
 }
 
 .single {
@@ -249,4 +250,11 @@ button {
 .icon-color-a:hover {
   color: cadetblue;
   transition: 0.2s;
+}
+
+.title-div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
 }

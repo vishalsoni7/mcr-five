@@ -77,9 +77,18 @@ export const Home = () => {
             <NavLink className="link" to={`/recipes/${id}`}>
               <div className="card-child">
                 <h4> {name} </h4>
-                <h5> Cuisine type : {cuisine} </h5>
-                <h5> Ingredients </h5>
-                <h5> Instructions </h5>
+
+                <div className="title-div">
+                  <h5> Cuisine type: </h5> <h5> {cuisine}</h5>
+                </div>
+                <div className="title-div">
+                  {" "}
+                  <h5> Ingredients: </h5> <h5> See More</h5>
+                </div>
+                <div className="title-div">
+                  {" "}
+                  <h5> Instructions:</h5> <h5> See More</h5>
+                </div>
               </div>{" "}
             </NavLink>
           </div>
